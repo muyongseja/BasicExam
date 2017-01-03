@@ -10,7 +10,8 @@ public class App {
 		ApplicationContext ctx = 
 			new ClassPathXmlApplicationContext("classpath:basic05/basic05-config.xml");
 		
-		
+		MessageBean bean = (MessageBean)ctx.getBean("msgBean");
+		bean.sayHello();
 	}
 }
 
