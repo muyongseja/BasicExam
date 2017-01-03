@@ -13,5 +13,18 @@
 		<property name="name" value="심순애" />
 		<property name="age" value="25" />
 		<property name="greeting" value="Good morning" />
+		<property name="out" ref="fileOut"></property>
+	</bean>
+	
+	<bean id="fileOut" class="basic05.FileOutputter">
+		<property name="filePath">
+			<value>c:\netsong7\messageBean.txt</value>
+		</property>
 	</bean>
 </beans>
+
+
+
+
+
+
