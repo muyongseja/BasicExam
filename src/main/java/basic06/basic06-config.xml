@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="msgBean" class="basic05.MessageBeanImpl">
+	<bean id="msgBean" class="basic06.MessageBeanImpl" init-method="messageInit">
 		<constructor-arg value="24" index="1"></constructor-arg>
 		<constructor-arg value="이수일" index="0"></constructor-arg>
 		<constructor-arg index="2">
@@ -13,12 +13,10 @@
 		<property name="name" value="심순애" />
 		<property name="age" value="25" />
 		<property name="greeting" value="Good morning" />
-		<property name="out">
-			<ref bean="fileOut"/>
-		</property>
+		<property name="out" ref="fileOut" />
 	</bean>
 	
-	<bean id="fileOut" class="basic05.FileOutputter">
+	<bean id="fileOut" class="basic06.FileOutputter">
 		<property name="filePath">
 			<value>c:\netsong7\messageBean.txt</value>
 		</property>
