@@ -5,9 +5,16 @@ import java.io.IOException;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("msgBean")
 public class MessageBeanImpl implements MessageBean {
+	@Value("홍길동")
 	private String name;
+	@Value("20")
 	private int age;
+	@Value("Hello")
 	private String greeting;
 	
 	/*

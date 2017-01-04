@@ -7,6 +7,7 @@
 	<!-- <context:annotation-config /> -->
 	<context:component-scan base-package="basic07" />
 	
+	<!--  
 	<bean id="msgBean" class="basic07.MessageBeanImpl" >
 		<constructor-arg value="24" index="1"></constructor-arg>
 		<constructor-arg value="이수일" index="0"></constructor-arg>
@@ -17,8 +18,9 @@
 		<property name="name" value="심순애" />
 		<property name="age" value="25" />
 		<property name="greeting" value="Good morning" />
-		<!-- <property name="out" ref="fileOut" /> -->
+		<property name="out" ref="fileOut" /> 
 	</bean>
+	-->
 	
 	<!--   
 	<bean id="fileOut" class="basic07.FileOutputter">
