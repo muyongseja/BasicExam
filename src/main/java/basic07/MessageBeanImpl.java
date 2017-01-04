@@ -1,17 +1,26 @@
 package basic07;
 
 import java.io.IOException;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
-import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
+
+import javax.inject.Inject;
+import javax.inject.Named;
 
 public class MessageBeanImpl implements MessageBean {
 	private String name;
 	private int age;
 	private String greeting;
+	
+	/*
+	@Autowired(required=false)
+	@Qualifier("fileOut")
+	private Outputter out;
+	*/
+	
+	/*
+	@Autowired
+	private Outputter out;
+	*/
+	
 	private Outputter out;
 	
 	public MessageBeanImpl() {}
@@ -31,7 +40,22 @@ public class MessageBeanImpl implements MessageBean {
 		this.greeting = greeting;
 	}
 	
+	/*
+	@Autowired
+	public void setOut(Outputter out) {
+		this.out = out;
+	}
+	*/
 	
+	/*
+	@Resource(name="fileOut")
+	public void setOut(Outputter out) {
+		this.out = out;
+	}
+	*/
+	
+	@Inject
+	@Named(value="serverOut")
 	public void setOut(Outputter out) {
 		this.out = out;
 	}
