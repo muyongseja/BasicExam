@@ -1,4 +1,4 @@
-package basic06;
+package basic07;
 
 import java.io.IOException;
 import org.springframework.beans.BeansException;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class MessageBeanImpl implements MessageBean, InitializingBean, DisposableBean, BeanNameAware, BeanFactoryAware{
+public class MessageBeanImpl implements MessageBean {
 	private String name;
 	private int age;
 	private String greeting;
@@ -19,7 +19,6 @@ public class MessageBeanImpl implements MessageBean, InitializingBean, Disposabl
 		this.name = name;
 		this.age = age;
 		this.greeting = greeting;
-		System.out.println("1. 빈의 생성자 호출");
 	}
 	
 	public void setName(String name) {
@@ -30,7 +29,6 @@ public class MessageBeanImpl implements MessageBean, InitializingBean, Disposabl
 	}
 	public void setGreeting(String greeting) {
 		this.greeting = greeting;
-		System.out.println("2. setter 호출됨.");
 	}
 	
 	
@@ -50,30 +48,6 @@ public class MessageBeanImpl implements MessageBean, InitializingBean, Disposabl
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	@Override
-	public void setBeanFactory(BeanFactory arg0) throws BeansException {
-		System.out.println("4. 빈의 팩토리 지정 : " + arg0.getClass());		
-	}
-	
-	@Override
-	public void setBeanName(String arg0) {
-		System.out.println("3. 빈의 이름 지정 : " + arg0);
-	}
-	
-	@Override
-	public void destroy() throws Exception {
-				
-	}
-	
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		System.out.println("6. 프로퍼티 지정 완료");		
-	}
-	
-	public void messageInit(){
-		System.out.println("7. 빈의 초기화");
 	}
 }
 
