@@ -3,6 +3,7 @@ package basic07;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
 public class FileOutputter implements Outputter {
 	private String filePath;
 	

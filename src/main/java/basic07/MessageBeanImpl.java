@@ -55,7 +55,9 @@ public class MessageBeanImpl implements MessageBean {
 	*/
 	
 	@Inject
-	@Named(value="serverOut")
+	//@Named(value="serverOut")
+	//@Named(value="serverOutputter")
+	@Named(value="fileOut")
 	public void setOut(Outputter out) {
 		this.out = out;
 	}

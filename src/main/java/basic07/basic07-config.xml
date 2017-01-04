@@ -4,7 +4,8 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-	<context:annotation-config />
+	<!-- <context:annotation-config /> -->
+	<context:component-scan base-package="basic07" />
 	
 	<bean id="msgBean" class="basic07.MessageBeanImpl" >
 		<constructor-arg value="24" index="1"></constructor-arg>
@@ -18,14 +19,16 @@
 		<property name="greeting" value="Good morning" />
 		<!-- <property name="out" ref="fileOut" /> -->
 	</bean>
-	 
+	
+	<!--   
 	<bean id="fileOut" class="basic07.FileOutputter">
 		<property name="filePath">
 			<value>c:\netsong7\messageBean.txt</value>
 		</property>
 	</bean>
+	-->
 	
-	<bean id="serverOut" class="basic07.ServerOutputter" />
+	<!-- <bean id="serverOut" class="basic07.ServerOutputter" /> -->
 </beans>
 
 
