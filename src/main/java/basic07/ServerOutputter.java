@@ -2,9 +2,13 @@ package basic07;
 
 import java.io.IOException;
 
+import javax.inject.Named;
+
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("serverOut")
+@Named("serverOut")
+@Scope("prototype")
 public class ServerOutputter implements Outputter{
 	@Override
 	public void output(String msg) throws IOException {
