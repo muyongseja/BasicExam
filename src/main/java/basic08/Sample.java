@@ -24,6 +24,10 @@ public class Sample {
 	private String state;
 	private String[] splitName;
 	
+	public void setEnvironment(String environment) {
+		this.environment = environment;
+	}
+
 	public void setCountry(String country) {
 		this.country = country;
 	}

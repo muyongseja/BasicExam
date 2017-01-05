@@ -6,7 +6,13 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	<context:annotation-config />
 	
-	<bean id="sample" class="basic08.Sample"></bean>
+	<bean id="sample" class="basic08.Sample">
+		<property name="environment" value="#{config.environment}" />
+		<property name="country" value="#{config.country}" />
+		<property name="state" value="#{config.getState()}" />
+		<property name="splitName" value="#{config.splitName('Tom Smith')}" />
+	</bean>
+	
 	<bean id="config" class="basic08.Configuration"></bean>
 </beans>
 
